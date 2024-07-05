@@ -5,36 +5,22 @@ WeConvene: Learned Image Compression with  Wavelet-Domain Convolution and Entrop
 
 This repository contains the code for reproducing the results with trained models, in the following paper:
 
-Our code is based on the paper named Learned Image Compression with Discretized Gaussian Mixture Likelihoods and Attention Modules. [arXiv](https://arxiv.org/abs/2001.01568), CVPR2020. Zhengxue Cheng, Heming Sun, Masaru Takeuchi, Jiro Katto
+Our code is based on the paper named Learned Image Compression with Mixed Transformer-CNN Architectures. [arXiv](https://arxiv.org/abs/2303.14978), CVPR2023. Jinming Liu, Heming Sun, Jiro Katto.
 
-Our paper is Learned Image Compression with Discretized Gaussian-Laplacian-Logistic Mixture Model and Concatenated Residual Modules. [arXiv](https://arxiv.org/abs/2107.06463).
+Our paper is WeConvene: Learned Image Compression with  Wavelet-Domain Convolution and Entropy Model. [arXiv](https://arxiv.org/abs/2107.06463).
 Haisheng Fu, Feng Liang, Jianping Lin, Bing Li, Mohammad Akbari, Jie Liang, Guohe Zhang, Dong Liu, Chengjie Tu, Jingning Han
 
 
 ## Paper Summary
 
-Recently deep learning-based image compression methods have achieved significant achievements and gradually outperformed traditional approaches including the latest standard Versatile Video Coding (VVC) in both PSNR and MS-SSIM metrics. Two key components of learned image compression frameworks are the entropy model of the latent representations
-and the encoding/decoding network architectures. Various models have been proposed, such as autoregressive, softmax, logistic mixture, Gaussian mixture, and Laplacian. Existing schemes only use one of these models. However, due to the vast diversity of images, it is not optimal to use one model for all images, even different regions of one image. In this paper, we propose a more flexible discretized Gaussian-Laplacian-Logistic mixture model (GLLMM) for the latent representations, which can adapt to different contents in different images and different regions of one image more accurately. Besides, in the encoding/decoding network design part, we propose a concatenated residual blocks
-(CRB), where multiple residual blocks are serially connected with additional shortcut connections. The CRB can improve the learning ability of the network, which can further improve the compression performance. Experimental results using the Kodak and Tecnick datasets show that the proposed scheme outperforms all the state-of-the-art learning-based methods and existing compression standards including VVC intra coding (4:4:4 and 4:2:0) in terms of the PSNR and MS-SSIM.
+Recently learned image compression (LIC) has achieved great progress and even outperformed the traditional approaches. However, LIC mainly reduces spatial redundancy in the autoencoder networks and entropy coding, but has not fully removed the frequency-domain correlation explicitly via linear transform (such as DCT or wavelet transform), which is the cornerstone of the traditional methods. To address this critical limitation, in this paper, we propose a surprisingly simple but efficient \ToolName{} framework, which introduces the discrete wavelet transform (DWT) to both the convolution layers and entropy coding of LIC. First, in both the core and hyperprior autoencoder networks, we propose a \underline{W}av\underline{e}let-domain \underline{C}onvolution (WeConv) module at selected layers to reduce the frequency-domain correlation explicitly and make the signal sparser. Experimental results show that by using the simplest Harr wavelet transform, WeConv can already achieve 0.2-0.25 dB gain in the rate-distortion (R-D) performance with negligible change of model size and running time. We also perform entropy coding and quantization in the wavelet domain, and propose a \underline{W}av\underline{e}let-domain \underline{Ch}annel-wise \underline{A}uto-\underline{R}egressive entropy \underline{M}odel (WeChARM), where the latent representations are quantized and entropy coded in the wavelet domain instead of spatial domain. Moreover, the entropy coding is split into two steps. We first encode and decode all the low-frequency wavelet transform coefficients, and then use them as prior information to encode and decode the high-frequency coefficients. The channel-wise entropy coding is further used in each step. WeChARM can further improve the R-D performance by 0.25-0.3 dB, with moderate increase of model size and running time. By combining WeConv and WeChARM, the proposed WeConvene scheme achieves superior R-D performance compared to other state-of-the-art LIC methods as well as the latest H.266/VVC. In particular, it achieves a BD-rate reduction of 9.11\%, 9.46\%, and 9.20\% over H.266/VVC on the Kodak, Tecnick, and CLIC datasets, respectively. Better performance can be achieved by using more advanced wavelet transforms. The proposed convolution-based system is also easier to train and has less requirements on GPU than transformer-based schemes.
 
 ### Environment 
 
-* Python==3.6.4
+* Python==3.10.0
 
-* Tensorflow==1.14.0
+* Compressai==1.2.6
 
-* [RangeCoder](https://github.com/lucastheis/rangecoder)
-
-```   
-    pip3 install range-coder
-```
-
-* [Tensorflow-Compression](https://github.com/tensorflow/compression) ==1.2
-
-```
-    pip3 install tensorflow-compression or 
-    pip3 install tensorflow_compression-1.2-cp36-cp36m-manylinux1_x86_64.whl
-```
 
 ### Test Usage
 
