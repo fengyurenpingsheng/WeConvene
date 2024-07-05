@@ -24,33 +24,8 @@ Recently learned image compression (LIC) has achieved great progress and even ou
 
 ### Test Usage
 
-* Download the pre-trained [models](https://pan.baidu.com/s/1VZ8EZZzX8VKJg4auKxVytQ) (The Extraction code is i6p3. These models are optimized by PSNR using lambda = 0.0016(number filters=128)) and lambda = 0.03(number filters=256)).
-
-* Run the following py files can encode or decode the input file. 
-
-```
-   python Encoder_Decoder_cvpr_blocks_leaky_GLLMM_directly_bits_github.py
-   note that:
-   endcoder_main(); // the Encoder code
-   decoder_main();  // the Decoder  code
-   path ='xxx';     // the test image 
-   save_image_name_path=''; // save the bit stream files.
-   num_filters = 128 or 256;  // 128 for low bit rates and 256 for high bit rates.
-   
-```
 
 
-
-## Reconstructed Samples
-
-Comparisons of reconstructed samples are given in the following.
-
-![](https://github.com/fengyurenpingsheng/Learned-image-compression-with-GLLMM/blob/main/Figure/example.png)
-
-
-## Evaluation Results
-
-![](https://github.com/fengyurenpingsheng/Learned-image-compression-with-GLLMM/blob/main/Figure/result.png)
 
 ## Notes
 
@@ -59,13 +34,13 @@ If you think it is useful for your reseach, please cite our paper.
 ```
 
 @ARTICLE{Fu_2023,
-  author={Fu, Haisheng and Liang, Feng and Lin, Jianping and Li, Bing and Akbari, Mohammad and Liang, Jie and Zhang, Guohe and Liu, Dong and Tu, Chengjie and Han, Jingning},
-  journal={IEEE Transactions on Image Processing}, 
-  title={Learned Image Compression With Gaussian-Laplacian-Logistic Mixture Model and Concatenated Residual Modules}, 
-  year={2023},
-  volume={32},
+  author={Fu, Haisheng and Liang, Jie},
+  journal={European Conference on Computer Vision (ECCV)}, 
+  title={WeConvene: Learned Image Compression with  Wavelet-Domain Convolution and Entropy Model}, 
+  year={2024},
+  volume={},
   number={},
-  pages={2063-2076},
+  pages={},
  }
 
 ```
