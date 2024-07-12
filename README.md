@@ -22,7 +22,7 @@ Recently learned image compression (LIC) has achieved great progress and even ou
 ## Training
 ``` 
 CUDA_VISIBLE_DEVICES='0' python -u ./train.py -d [path of training dataset] \
-    --cuda --N 128 --lambda 0.05 --epochs 50 --lr_epoch 130 180 \
+    --cuda --N 128 --lambda 0.05 --epochs 201 --lr_epoch 130 180 \
     --save_path [path for checkpoint] --save \
     --checkpoint [path of the pretrained checkpoint]
 ```
