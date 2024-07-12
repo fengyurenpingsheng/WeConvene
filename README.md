@@ -7,8 +7,6 @@ This repository contains the code for reproducing the results with trained model
 
 Our code is based on the paper named Learned Image Compression with Mixed Transformer-CNN Architectures. [arXiv](https://arxiv.org/abs/2303.14978), CVPR2023. Jinming Liu, Heming Sun, Jiro Katto.
 
-Our paper is WeConvene: Learned Image Compression with  Wavelet-Domain Convolution and Entropy Model. [arXiv](https://arxiv.org/abs/2107.06463).
-Haisheng Fu, Feng Liang, Jianping Lin, Bing Li, Mohammad Akbari, Jie Liang, Guohe Zhang, Dong Liu, Chengjie Tu, Jingning Han
 
 
 ## Paper Summary
@@ -34,9 +32,9 @@ If you think it is useful for your reseach, please cite our paper.
 ```
 
 @ARTICLE{Fu_2023,
-  author={Fu, Haisheng and Liang, Jie},
+  author={Haisheng Fu, Feng Liang, Jianping Lin, Bing Li, Mohammad Akbari, Jie Liang, Guohe Zhang, Dong Liu, Chengjie Tu, Jingning Han},
   journal={European Conference on Computer Vision (ECCV)}, 
-  title={WeConvene: Learned Image Compression with  Wavelet-Domain Convolution and Entropy Model}, 
+  title={WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model}, 
   year={2024},
   volume={},
   number={},
