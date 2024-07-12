@@ -31,15 +31,5 @@ Recently learned image compression (LIC) has achieved great progress and even ou
 If you think it is useful for your reseach, please cite our paper. 
 ```
 
-@ARTICLE{Fu_2023,
-  author={Haisheng Fu, Feng Liang, Jianping Lin, Bing Li, Mohammad Akbari, Jie Liang, Guohe Zhang, Dong Liu, Chengjie Tu, Jingning Han},
-  journal={European Conference on Computer Vision (ECCV)}, 
-  title={WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model}, 
-  year={2024},
-  volume={},
-  number={},
-  pages={},
- }
-
 ```
 
