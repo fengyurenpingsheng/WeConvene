@@ -23,13 +23,3 @@ Recently learned image compression (LIC) has achieved great progress and even ou
 ### Test Usage
 
 
-
-
-## Notes
-
-
-If you think it is useful for your reseach, please cite our paper. 
-```
-
-```
-
