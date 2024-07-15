@@ -40,12 +40,12 @@ python eval.py --checkpoint [path of the pretrained checkpoint] --data [path of 
 ## Pretrained Model
 | Lambda | Metric | Link |
 |--------|--------|------|
-| 0.0025   | MSE    |   [link]()   |
-| 0.0035   | MSE    |   [link]()   |
-| 0.0067   | MSE    |   [link]()   |
-| 0.013    | MSE    |   [link]()   |
-| 0.025    | MSE    |   [link]()   |
-| 0.05     | MSE    |   [link]()   |
+| 0.0025   | MSE    |   [link](链接：https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
+| 0.0035   | MSE    |   [link](链接：https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
+| 0.0067   | MSE    |   [link](链接：https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
+| 0.013    | MSE    |   [link](链接：https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
+| 0.025    | MSE    |   [link](链接：https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
+| 0.05     | MSE    |   [link](链接：https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
 
 
 
