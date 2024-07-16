@@ -1,7 +1,7 @@
 # WeConvene-Learned-Image-Compression-with-Wavelet-Domain-Convolution-and-Entropy-Model
 This repository contains the code for reproducing the results with trained models for the following ECCV2024 paper:
 
-WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model, Haisheng Fu and Jie Liang and Zhenman Fang and Jingning Han and Feng Liang and Guohe Zhang.
+WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model. [arXiv](https://arxiv.org/abs/2407.09983), ECCV2024. Haisheng Fu and Jie Liang and Zhenman Fang and Jingning Han and Feng Liang and Guohe Zhang.
 
 Our code is based on the paper named Learned Image Compression with Mixed Transformer-CNN Architectures. [arXiv](https://arxiv.org/abs/2303.14978), CVPR2023. Jinming Liu, Heming Sun, Jiro Katto.
 
