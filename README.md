@@ -48,16 +48,28 @@ python eval.py --checkpoint [path of the pretrained checkpoint] --data [path of 
 
 
 ## Citation
-``` 
-@misc{Fu2024ECCV2024,
-      title={WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model}, 
-      author={Haisheng Fu and Jie Liang and Zhenman Fang and Jingning Han and Feng Liang and Guohe Zhang},
-      year={2024},
-      eprint={2407.09983},
-      archivePrefix={arXiv},
-      primaryClass={stat.AP},
-      url={https://arxiv.org/abs/2407.09983}, 
+```
+
+@InProceedings{Fu2024ECCV2024,
+author="Fu, Haisheng
+and Liang, Jie
+and Fang, Zhenman
+and Han, Jingning
+and Liang, Feng
+and Zhang, Guohe",
+editor="Leonardis, Ale{\v{s}}
+and Ricci, Elisa
+and Roth, Stefan
+and Russakovsky, Olga
+and Sattler, Torsten
+and Varol, G{\"u}l",
+title="WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model",
+booktitle="Computer Vision -- ECCV 2024",
+year="2025",
+publisher="Springer Nature Switzerland",
+pages="37--53",
 }
+
 ```
 
 
