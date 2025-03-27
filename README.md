@@ -57,12 +57,6 @@ and Fang, Zhenman
 and Han, Jingning
 and Liang, Feng
 and Zhang, Guohe",
-editor="Leonardis, Ale{\v{s}}
-and Ricci, Elisa
-and Roth, Stefan
-and Russakovsky, Olga
-and Sattler, Torsten
-and Varol, G{\"u}l",
 title="WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model",
 booktitle="Computer Vision -- ECCV 2024",
 year="2025",
