@@ -1,70 +1,55 @@
-# WeConvene-Learned-Image-Compression-with-Wavelet-Domain-Convolution-and-Entropy-Model
-This repository contains the code for reproducing the results with trained models for the following ECCV2024 paper:
+# Learned Image Compression with Mixed Transformer-CNN Architectures [CVPR23 Highlight]
 
-WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model. [arXiv](https://arxiv.org/abs/2407.09983), ECCV2024. Haisheng Fu and Jie Liang and Zhenman Fang and Jingning Han and Feng Liang and Guohe Zhang.
+This is the repository of the paper "[Learned Image Compression with Mixed Transformer-CNN Architectures](https://arxiv.org/abs/2303.14978)"
 
-Our code is based on the paper named Learned Image Compression with Mixed Transformer-CNN Architectures. [arXiv](https://arxiv.org/abs/2303.14978), CVPR2023. Jinming Liu, Heming Sun, Jiro Katto.
+## Abstract
+Learned image compression (LIC) methods have exhibited promising progress and superior rate-distortion performance compared with classical image compression standards. Most existing LIC methods are Convolutional Neural Networks-based (CNN-based) or Transformer-based, which have different advantages. Exploiting both advantages is a point worth exploring, which has two challenges: 1) how to effectively fuse the two methods? 2) how to achieve higher performance with a suitable complexity? In this paper, we propose an efficient parallel Transformer-CNN Mixture (TCM) block with a controllable complexity to incorporate the local modeling ability of CNN and the non-local modeling ability of transformers to improve the overall architecture of image compression models. Besides, inspired by the recent progress of entropy estimation models and attention modules, we propose a channel-wise entropy model with parameter-efficient swin-transformer-based attention (SWAtten) modules by using channel squeezing. Experimental results demonstrate our proposed method achieves state-of-the-art rate-distortion performances on three different resolution datasets (i.e., Kodak, Tecnick, CLIC Professional Validation) compared to existing LIC methods.
 
+## Architectures
+The overall framework.
 
+<img src="./assets/tcm.png"  style="zoom: 33%;" />
 
-## Paper Summary
+The proposed entropy model.
 
-Recently learned image compression (LIC) has achieved great progress and even outperformed the traditional approaches. However, LIC mainly reduces spatial redundancy in the autoencoder networks and entropy coding, but has not fully removed the frequency-domain correlation explicitly via linear transform (such as DCT or wavelet transform), which is the cornerstone of the traditional methods. To address this critical limitation, in this paper, we propose a surprisingly simple but efficient framework, which introduces the discrete wavelet transform (DWT) to both the convolution layers and entropy coding of LIC. First, in both the core and hyperprior autoencoder networks, we propose a Wavelet-domain Convolution (WeConv) module at selected layers to reduce the frequency-domain correlation explicitly and make the signal sparser. Experimental results show that by using the simplest Harr wavelet transform, WeConv can already achieve 0.2-0.25 dB gain in the rate-distortion (R-D) performance with negligible change of model size and running time. We also perform entropy coding and quantization in the wavelet domain, and propose a Wavelet-domain Channel-wise Auto-Regressive entropy Model (WeChARM), where the latent representations are quantized and entropy coded in the wavelet domain instead of spatial domain. Moreover, the entropy coding is split into two steps. We first encode and decode all the low-frequency wavelet transform coefficients, and then use them as prior information to encode and decode the high-frequency coefficients. The channel-wise entropy coding is further used in each step. WeChARM can further improve the R-D performance by 0.25-0.3 dB, with moderate increase of model size and running time. By combining WeConv and WeChARM, the proposed WeConvene scheme achieves superior R-D performance compared to other state-of-the-art LIC methods as well as the latest H.266/VVC. In particular, it achieves a BD-rate reduction of 9.11%, 9.46%, and 9.20% over H.266/VVC on the Kodak, Tecnick, and CLIC datasets, respectively. Better performance can be achieved by using more advanced wavelet transforms. The proposed convolution-based system is also easier to train and has less requirements on GPU than transformer-based schemes.
+<img src="./assets/entropy.png"  style="zoom: 33%;" />
 
-### Environment 
+## Evaluation Results
+RD curves on Kodak.
 
-* Python==3.10.0
-
-* Compressai==1.2.6
+<img src="./assets/res.png"  style="zoom: 33%;" />
 
 ## Training
 ``` 
 CUDA_VISIBLE_DEVICES='0' python -u ./train.py -d [path of training dataset] \
-    --cuda --N 128 --lambda 0.05 --epochs 201 --lr_epoch 130 180 \
+    --cuda --N 128 --lambda 0.05 --epochs 50 --lr_epoch 45 48 \
     --save_path [path for checkpoint] --save \
     --checkpoint [path of the pretrained checkpoint]
 ```
 
-
-### Test Usage
-
+## Testing
+``` 
+python eval.py --checkpoint [path of the pretrained checkpoint] --data [path of testing dataset] --cuda
 ```
-
-python eval.py --checkpoint [path of the pretrained checkpoint] --data [path of testing dataset] --cuda --real
-   
-```
-
 
 ## Pretrained Model
 | Lambda | Metric | Link |
 |--------|--------|------|
-| 0.0025   | MSE    |   [link](https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
-| 0.0035   | MSE    |   [link](https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
-| 0.0067   | MSE    |   [link](https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
-| 0.013    | MSE    |   [link](https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
-| 0.025    | MSE    |   [link](https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
-| 0.05     | MSE    |   [link](https://pan.baidu.com/s/1VaD4yzY0mwbcWp1XKERnqw?pwd=0ih5)   |
+| 0.05   | MSE    |   [link](https://drive.google.com/file/d/1TK-CPiD2QwtWJqZoT_OyCtnxdQ7UNP56/view?usp=share_link)   |
 
+
+## Reconstructed Samples
+<img src="./assets/visual.png"  style="zoom: 33%;" />
 
 
 ## Citation
 ```
-
-@InProceedings{Fu2024ECCV2024,
-author="Fu, Haisheng
-and Liang, Jie
-and Fang, Zhenman
-and Han, Jingning
-and Liang, Feng
-and Zhang, Guohe",
-title="WeConvene: Learned Image Compression with Wavelet-Domain Convolution and Entropy Model",
-booktitle="Computer Vision -- ECCV 2024",
-year="2025",
-publisher="Springer Nature Switzerland",
-pages="37--53",
+@inproceedings{liu2023tcm,
+  author = {Liu, Jinming and Sun, Heming and Katto, Jiro},
+  title = {Learned Image Compression with Mixed Transformer-CNN Architectures},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={1--10},
+  year = {2023}
 }
-
 ```
-
-
 
