@@ -100,24 +100,6 @@ def main(argv):
     total_enc =0
     total_dec =0
     dictory = {}
-    flops, macs, params = get_model_profile(model=net,  # model
-                                            input_shape=(1, 3, 768, 512),
-                                            # input shape to the model. If specified, the model takes a tensor with this shape as the only positional argument.
-                                            args=None,  # list of positional arguments to the model.
-                                            kwargs=None,  # dictionary of keyword arguments to the model.
-                                            print_profile=True,
-                                            # prints the model graph with the measured profile attached to each module
-                                            detailed=True,  # print the detailed profile
-                                            module_depth=-1,
-                                            # depth into the nested modules, with -1 being the inner most modules
-                                            top_modules=1,  # the number of top modules to print aggregated profile
-                                            warm_up=10,
-                                            # the number of warm-ups before measuring the time of each module
-                                            as_string=True,
-                                            # print raw numbers (e.g. 1000) or as human-readable strings (e.g. 1k)
-                                            output_file=None,
-                                            # path to the output file. If None, the profiler prints to stdout.
-                                            ignore_modules=None)  # the list of modules to ignore in the profiling
     if args.checkpoint:  # load from previous checkpoint
         print("Loading", args.checkpoint)
         checkpoint = torch.load(args.checkpoint, map_location=device)
@@ -192,7 +174,6 @@ def main(argv):
     print(f'average_time: {total_time:.3f} ms')
     print(f'encode average_time: {ave_enc:.3f} ms')
     print(f'decode average_time: {ave_dec:.3f} ms')
-    print(f"FLOPs: {flops}, MACs: {macs}, Params: {params}")
     
 
 if __name__ == "__main__":
