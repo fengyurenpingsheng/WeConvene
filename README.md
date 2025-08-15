@@ -49,15 +49,12 @@ python eval.py --checkpoint [path of the pretrained checkpoint] --data [path of 
 
 #### results on three dataset(Kodak,Tecnick, professional pro)
 Fu_ECCV2024_kodak_bpp = [0.163, 0.203, 0.309, 0.452, 0.637, 0.897];
-
 Fu_ECCV2024_kodak_psnr = [30.07, 30.88, 32.53, 34.29, 36.04, 37.96];
 
 Fu_ECCV2024_Tecnick_bpp = [0.130, 0.156, 0.224, 0.311, 0.435, 0.622];
-
 Fu_ECCV2024_Tecnick_psnr = [32.00, 32.71, 34.18, 35.65, 37.08, 38.64];
 
 Fu_ECCV2024_professional_pro_bpp = [0.122, 0.150, 0.226, 0.325, 0.462, 0.667];
-
 Fu_ECCV2024_professional_pro_psnr = [31.85, 32.58, 34.04, 35.56, 37.05, 38.68];
 
 ## Citation
